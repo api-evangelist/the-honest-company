@@ -1,8 +1,29 @@
 aid: the-honest-company
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/the-honest-company.png
 name: The Honest Company
-description: 'The Honest Company is a company surfaced as a portfolio company of iconiq-capital, ivp,
-  lightspeed-venture-partners and added to the API Evangelist network as a stub for enrichment. Sector:
-  consumer. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  The Honest Company is a consumer-goods brand selling baby, personal-care,
+  beauty, and household products through its direct-to-consumer storefront at
+  honest.com and through major retailers. It was surfaced in the API Evangelist
+  network as a portfolio company of iconiq-capital, ivp, and
+  lightspeed-venture-partners. The honest.com storefront runs on Shopify and
+  does not publish a first-party developer API; the only machine-readable API
+  surface discoverable on the domain is Shopify's Customer Account API
+  (OIDC/OAuth2) advertised via the store's /.well-known/ discovery documents.
+  This profile captures that authentication surface, the domain security
+  posture, and the storefront's public web properties.
 url: https://raw.githubusercontent.com/api-evangelist/the-honest-company/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -14,10 +35,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Consumer
+- Consumer Goods
+- Ecommerce
+- Retail
+- Baby
+- Personal Care
+- Shopify
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -27,3 +54,26 @@ maintainers:
 common:
 - type: Website
   url: https://www.honest.com/
+- type: Blog
+  url: https://www.honest.com/blog
+- type: PrivacyPolicy
+  url: https://www.honest.com/pages/privacy-policy
+- type: TermsOfService
+  url: https://www.honest.com/pages/terms-of-service
+- type: Login
+  url: https://www.honest.com/account/login
+- type: WellKnown
+  url: well-known/the-honest-company-well-known.yml
+- type: Authentication
+  url: authentication/the-honest-company-authentication.yml
+- type: OAuthScopes
+  url: scopes/the-honest-company-scopes.yml
+- type: Conformance
+  url: conformance/the-honest-company-conformance.yml
+- type: DomainSecurity
+  url: security/the-honest-company-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1

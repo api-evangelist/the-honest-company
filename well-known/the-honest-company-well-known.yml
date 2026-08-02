@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: live fetch of https://www.honest.com/.well-known/*
+host: https://www.honest.com
+notes: >-
+  www.honest.com is a Shopify-hosted storefront. The OIDC/OAuth discovery
+  documents describe Shopify's Customer Account API scoped to this store
+  (issuer https://shopify.com/authentication/64768475320), not a first-party
+  Honest Company developer API. Values captured verbatim.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 200
+  file: the-honest-company-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: the-honest-company-oauth-authorization-server.json
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

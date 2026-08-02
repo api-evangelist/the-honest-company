@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.honest.com/.well-known/openid-configuration
+notes: >-
+  Derived from the live OpenID Connect discovery document served at
+  www.honest.com/.well-known/openid-configuration. The storefront is powered by
+  Shopify; authentication is Shopify's Customer Account API (issuer
+  https://shopify.com/authentication/64768475320), not a first-party Honest
+  Company developer API.
+summary:
+  types:
+  - openIdConnect
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  pkce: S256
+  token_endpoint_auth_methods:
+  - client_secret_basic
+schemes:
+- name: ShopifyCustomerAccountOIDC
+  type: openIdConnect
+  openIdConnectUrl: https://www.honest.com/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/64768475320
+  authorization_endpoint: https://shopify.com/authentication/64768475320/oauth/authorize
+  token_endpoint: https://shopify.com/authentication/64768475320/oauth/token
+  end_session_endpoint: https://shopify.com/authentication/64768475320/logout
+  jwks_uri: https://shopify.com/authentication/64768475320/.well-known/jwks.json
+  grant_types:
+  - authorization_code
+  - refresh_token
+  - urn:ietf:params:oauth:grant-type:jwt-bearer
+  response_types:
+  - code
+  code_challenge_methods:
+  - S256
+  id_token_signing_alg:
+  - RS256
+  sources:
+  - well-known/the-honest-company-openid-configuration.json

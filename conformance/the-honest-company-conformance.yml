@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.honest.com/.well-known/openid-configuration
+notes: >-
+  Conformance asserted from the live OIDC/OAuth discovery documents served on
+  the honest.com storefront (Shopify Customer Account API). These reflect the
+  Shopify-provided auth surface, not a first-party Honest Company API.
+standards:
+- id: oidc-discovery
+  conforms: true
+  evidence: /.well-known/openid-configuration returns a valid OIDC discovery document (200)
+- id: oauth2-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns RFC 8414 metadata (200)
+- id: oauth2
+  conforms: true
+  evidence: authorization_code + refresh_token grant types advertised
+- id: pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256 (RFC 7636)
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404
